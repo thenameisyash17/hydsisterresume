@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Koppula Swetha - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #1e1e2f;
+      --accent-color: #4caf50;
+      --light-bg: #f4f4f4;
+      --dark-bg: #2c2c3c;
+      --text-color: #333;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #f4f4f4, #e0e0e0, #f4f4f4);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    @keyframes gradientFlow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    header {
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      margin: 20px auto;
+      display: block;
+      object-fit: cover;
+      animation: pulseBorder 3s infinite ease-in-out;
+    }
+    @keyframes pulseBorder {
+      0%, 100% { box-shadow: 0 0 0px var(--accent-color); }
+      50% { box-shadow: 0 0 20px var(--accent-color); }
+    }
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { margin-top: 10px; font-size: 1.2rem; }
+    #typing {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #c8e6c9;
+    }
+    nav {
+      background: var(--dark-bg);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+    nav a {
+      color: var(--white);
+      margin: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+      transform: scale(1.1);
+      box-shadow: 0 0 10px var(--accent-color);
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .info-grid div {
+      background: var(--white);
+      padding: 15px;
+      border-left: 4px solid var(--accent-color);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    .skill {
+      margin-bottom: 15px;
+    }
+    .skill-bar {
+      background: #ddd;
+      height: 10px;
+      border-radius: 10px;
+    }
+    .skill-fill {
+      background: var(--accent-color);
+      height: 10px;
+      border-radius: 10px;
+      width: 0;
+      animation: growBar 2s forwards;
+    }
+    @keyframes growBar {
+      to { width: var(--final-width); }
+    }
+    .resume-btn {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .resume-btn:hover {
+      background: #388e3c;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px var(--accent-color);
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+    form button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+    }
+    footer {
+      background: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://via.placeholder.com/120" alt="Profile" class="profile-pic" />
+  <h1>KOPPULA SWETHA</h1>
+  <p id="typing"></p>
+  <a href="sister.pdf" download class="resume-btn">Download Resume</a>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>Career Objective</h2>
+  <p>
+    As a motivated and detail-oriented diploma holder in Computer Engineering (CME), I am seeking an entry-level Web Developer position where I can apply my knowledge of HTML, CSS, JavaScript, Python, C, C++ and DBMS. My goal is to contribute to innovative web solutions while continuously learning and improving my development skills in a dynamic and growth-oriented environment.
+  </p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="info-grid">
+    <div><strong>Diploma (CME)</strong><br/>BOMMA INSTITUTE OF TECHNOLOGY AND SCIENCE<br/>SBTET - 2024<br/>Percentage: 93%</div>
+    <div><strong>S.S.C</strong><br/>TSRS GIRLS WYRA<br/>Board Of Secondary Education - 2022<br/>Percentage: 95%</div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <ul>
+    <li>MS-Office (Word, Excel, PowerPoint)</li>
+    <li>HTML, CSS, JavaScript</li>
+    <li>C, C++, Java, Python</li>
+  </ul>
+
+  <h2>Personal Skills</h2>
+  <ul>
+    <li>Self-Confidence and Determination in the assigned work</li>
+    <li>Hard Working</li>
+    <li>Good at human relations, enthusiastic to learn and to take up challenging work</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li>Smart ATM</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact Info</h2>
+  <div class="info-grid">
+    <div><strong>Email:</strong><br/> koppulaswethareddy19@gmail.com</div>
+    <div><strong>Mobile:</strong><br/> 9347289750</div>
+    <div><strong>Address:</strong><br/> Enkoor, TS 507168</div>
+    <div><strong>LinkedIn:</strong><br/><a href="#" target="_blank">LinkedIn Profile</a></div>
+    <div><strong>Portfolio:</strong><br/><a href="#" target="_blank">Your Portfolio Website</a></div>
+  </div>
+  <h2>Contact Form</h2>
+  <form action="mailto:koppulaswethareddy19@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Koppula Swetha | Designed with ❤️</p>
+</footer>
+
+<script>
+  const text = "Entry-Level Web Developer | HTML, CSS, JS, Python, C, C++, Java";
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 50);
+    }
+  }
+  window.onload = typeWriter;
+</script>
+
+</body>
+</html>
